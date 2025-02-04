@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weed Relax B&B - Clusane d'Iseo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --verde: #88AA77;
+            --bordeaux: #6D1A1A;
+            --beige: #F5E6D3;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        .navbar {
+            background: var(--beige) !important;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://source.unsplash.com/random/1920x1080/?villa,garden') center/cover;
+            height: 70vh;
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--verde) !important;
+            border: none;
+        }
+
+        .card-room {
+            transition: transform 0.3s;
+        }
+        .card-room:hover {
+            transform: translateY(-10px);
+        }
+
+        #blog-hero {
+            background: url('https://source.unsplash.com/random/1920x1080/?vineyard') center/cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span style="color: var(--verde);">🌿 Weed Relax</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#camere">Camere</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog Vigneti</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Homepage Hero -->
+    <section class="hero d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Il tuo rifugio nella Franciacorta</h1>
+            <p class="lead">Camere con bagno privato, piscina e colazione tra i vigneti</p>
+            <a href="#camere" class="btn btn-primary btn-lg me-2">Scopri le camere</a>
+            <a href="#contatti" class="btn btn-outline-light btn-lg">Prenota ora</a>
+        </div>
+    </section>
+
+    <!-- Camere -->
+    <section id="camere" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Le nostre camere</h2>
+            <div class="row g-4">
+                <!-- Camera 1 -->
+                <div class="col-md-6">
+                    <div class="card card-room h-100">
+                        <img src="https://source.unsplash.com/random/800x600/?bedroom,rustic" class="card-img-top" alt="Suite Campagna">
+                        <div class="card-body">
+                            <h3>Suite Campagna (1° piano)</h3>
+                            <ul class="list-unstyled">
+                                <li>🛏️ Letto matrimoniale</li>
+                                <li>🚿 Bagno con doccia</li>
+                                <li>📚 Loggia con scrivania</li>
+                                <li>🌄 Vista sulle colline</li>
+                            </ul>
+                            <p class="h4">€120/notte + €30 pulizia</p>
+                            <button class="btn btn-primary">Prenota</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camera 2 -->
+                <div class="col-md-6">
+                    <div class="card card-room h-100">
+                        <img src="https://source.unsplash.com/random/800x600/?jacuzzi" class="card-img-top" alt="Spa Suite">
+                        <div class="card-body">
+                            <h3>Spa Suite (piano terra)</h3>
+                            <ul class="list-unstyled">
+                                <li>🛁 Vasca idromassaggio</li>
+                                <li>🌿 Accesso diretto al giardino</li>
+                                <li>📺 Smart TV 4K</li>
+                                <li>🔑 Parcheggio privato</li>
+                            </ul>
+                            <p class="h4">€120/notte + €30 pulizia</p>
+                            <div class="alert alert-success mt-3">
+                                🤑 Sconto 20% per pagamenti in crypto!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Vigneti -->
+    <section id="blog" class="bg-light py-5">
+        <div class="container">
+            <div class="p-5 text-center bg-dark text-white rounded-3 mb-4" id="blog-hero">
+                <h2 class="display-6">Esplora i vigneti della Franciacorta</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://source.unsplash.com/random/800x600/?wine,cellar" class="card-img-top" alt="Cantine">
+                        <div class="card-body">
+                            <h3>5 Cantine Bio da Scoprire</h3>
+                            <p>Itinerario tra i produttori locali a meno di 10 minuti dal B&B</p>
+                            <a href="#" class="btn btn-sm btn-outline-dark">Leggi l'articolo →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://source.unsplash.com/random/800x600/?vineyard" class="card-img-top" alt="Vigneti">
+                        <div class="card-body">
+                            <h3>Storia del Terroir</h3>
+                            <p>Perché il microclima del lago d'Iseo è unico al mondo</p>
+                            <a href="#" class="btn btn-sm btn-outline-dark">Leggi l'articolo →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="https://source.unsplash.com/random/800x600/?wine,tasting" class="card-img-top" alt="Degustazione">
+                        <div class="card-body">
+                            <h3>Eventi 2024</h3>
+                            <p>Calendario delle prossime degustazioni e cene in cantina</p>
+                            <a href="#" class="btn btn-sm btn-outline-dark">Leggi l'articolo →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti" class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h2>Prenota il tuo soggiorno</h2>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nome">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Messaggio"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Invia richiesta</button>
+                    </form>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4>📌 Come raggiungerci</h4>
+                            <p>Clusane d'Iseo, Via Custoza 3</p>
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.326776726809!2d10.05743177666065!3d45.73620047108104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4781527d5c5b45a9%3A0x5f5c2a9d3c4e3b0!2sClusane%20sul%20Lago%2C%20Iseo!5e0!3m2!1sen!2sit!4v1716400000000!5m2!1sen!2sit" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <hr>
+                            <p>📞 +39 340 3768311<br>
+                            📧 weedrelax@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>© 2024 Weed Relax B&B - P.IVA 01234567890<br>
+            <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Termini e condizioni</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Cookie Banner -->
+    <div class="alert alert-dark position-fixed bottom-0 end-0 m-3" role="alert">
+        🍪 Usiamo cookie per migliorare la tua esperienza. 
+        <a href="#" class="alert-link">Scopri di più</a>
+        <button type="button" class="btn btn-sm btn-outline-dark ms-3" data-bs-dismiss="alert">Accetto</button>
+    </div>
+</body>
+</html>
