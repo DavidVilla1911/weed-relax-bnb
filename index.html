@@ -3,105 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weed Relax B&B - Pagamenti Crypto</title>
+    <title>Weed Relax B&B - Clusane d'Iseo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --evm-color: #f6851b;
-            --solana-color: #9945ff;
+            --verde: #88AA77;
+            --bordeaux: #6D1A1A;
+            --beige: #F5E6D3;
         }
 
-        .network-selector .btn {
-            transition: all 0.3s;
+        body {
+            font-family: 'Lato', sans-serif;
         }
 
-        .crypto-section {
-            display: none;
+        .navbar {
+            background: var(--beige) !important;
         }
 
-        .crypto-section.active {
-            display: block;
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('esterno.jpg') center/cover;
+            height: 70vh;
+            color: white;
         }
 
-        .price-updater {
-            cursor: pointer;
+        .btn-primary {
+            background: var(--verde) !important;
+            border: none;
+        }
+
+        .card-room {
+            transition: transform 0.3s;
+        }
+        .card-room:hover {
+            transform: translateY(-10px);
+        }
+
+        #blog-hero {
+            background: url('vigneti.jpg') center/cover;
+        }
+
+        .wallet-alert {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span style="color: var(--verde);">🌿 Weed Relax</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#camere">Camere</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#paga">Paga in Crypto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Homepage Hero -->
+    <section class="hero d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Il tuo rifugio nella Franciacorta</h1>
+            <p class="lead">Camere con bagno privato, piscina e colazione tra i vigneti</p>
+            <a href="#camere" class="btn btn-primary btn-lg me-2">Scopri le camere</a>
+            <a href="#paga" class="btn btn-outline-light btn-lg">Paga in Crypto</a>
+        </div>
+    </section>
+
+    <!-- Camere -->
+    <section id="camere" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Le nostre camere</h2>
+            <div class="row g-4">
+                <!-- Camera 1 -->
+                <div class="col-md-6">
+                    <div class="card card-room h-100">
+                        <img src="camera1.jpg" class="card-img-top" alt="Suite Campagna">
+                        <div class="card-body">
+                            <h3>Suite Campagna (1° piano)</h3>
+                            <ul class="list-unstyled">
+                                <li>🛏️ Letto matrimoniale</li>
+                                <li>🚿 Bagno con doccia</li>
+                                <li>📚 Loggia con scrivania</li>
+                                <li>🌄 Vista sulle colline</li>
+                            </ul>
+                            <p class="h4">€120/notte + €30 pulizia</p>
+                            <button class="btn btn-primary" onclick="showPaymentSection()">Prenota</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camera 2 -->
+                <div class="col-md-6">
+                    <div class="card card-room h-100">
+                        <img src="camera2.jpg" class="card-img-top" alt="Spa Suite">
+                        <div class="card-body">
+                            <h3>Spa Suite (piano terra)</h3>
+                            <ul class="list-unstyled">
+                                <li>🛁 Vasca idromassaggio</li>
+                                <li>🌿 Accesso diretto al giardino</li>
+                                <li>📺 Smart TV 4K</li>
+                                <li>🔑 Parcheggio privato</li>
+                            </ul>
+                            <p class="h4">€120/notte + €30 pulizia</p>
+                            <button class="btn btn-primary" onclick="showPaymentSection()">Prenota</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sezione Pagamenti Crypto -->
-    <section class="container my-5">
-        <div class="card shadow">
-            <div class="card-body">
-                <!-- Selezione Rete -->
-                <div class="network-selector mb-4">
-                    <button class="btn btn-lg me-2 active" data-network="evm" 
-                            style="background: var(--evm-color); color: white">
-                        <img src="metamask-icon.png" width="30" alt="EVM"> EVM
-                    </button>
-                    <button class="btn btn-lg" data-network="solana"
-                            style="background: var(--solana-color); color: white">
-                        <img src="phantom-icon.png" width="30" alt="Solana"> Solana
-                    </button>
-                </div>
+    <section id="paga" class="py-5 bg-light">
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">💰 Paga in Crypto (DeFi)</h2>
+                    
+                    <!-- Selezione Rete -->
+                    <div class="network-selector mb-4 text-center">
+                        <button class="btn btn-lg me-2 active" onclick="showNetwork('evm')" 
+                                style="background: var(--verde); color: white">
+                            EVM Chains
+                        </button>
+                        <button class="btn btn-lg" onclick="showNetwork('solana')"
+                                style="background: var(--bordeaux); color: white">
+                            Solana
+                        </button>
+                    </div>
 
-                <!-- Prezzi Dinamici -->
-                <div class="mb-4">
-                    <h3>Prezzo: <span id="crypto-price">...</span>
-                        <small class="text-muted" id="refresh-price" title="Aggiorna">
-                            🔄
-                        </small>
-                    </h3>
-                    <p class="text-muted" id="last-updated"></p>
-                </div>
-
-                <!-- Sezione EVM -->
-                <div class="crypto-section active" id="evm-section">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button onclick="connectMetaMask()" class="btn btn-primary mb-3 w-100">
-                                Connetti MetaMask
-                            </button>
-                            <div class="mb-3">
-                                <button onclick="sendPaymentEVM()" class="btn btn-success w-100" 
-                                        id="pay-evm" disabled>
-                                    Paga con MetaMask
+                    <!-- EVM Section -->
+                    <div id="evm-section" class="crypto-section">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button onclick="connectMetaMask()" class="btn btn-primary w-100 mb-3">
+                                    Connetti MetaMask
+                                </button>
+                                <div id="evm-address" class="mb-3 small"></div>
+                                <button onclick="sendPaymentEVM()" class="btn btn-success w-100" id="pay-evm" disabled>
+                                    Paga 120€
                                 </button>
                             </div>
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <img src="qr-evm.jpg" alt="Wallet EVM" class="img-fluid mb-2" style="max-width: 200px;">
-                            <p class="small">Indirizzo EVM:<br>
-                            <code>0x5892...cbd4</code></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sezione Solana -->
-                <div class="crypto-section" id="solana-section">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <button onclick="connectPhantom()" class="btn btn-primary mb-3 w-100">
-                                Connetti Phantom
-                            </button>
-                            <div class="mb-3">
-                                <button onclick="sendPaymentSolana()" class="btn btn-success w-100" 
-                                        id="pay-solana" disabled>
-                                    Paga con Phantom
-                                </button>
+                            <div class="col-md-6 text-center">
+                                <img src="qr-evm.jpg" alt="EVM QR" class="img-fluid" style="max-width: 200px;">
+                                <p class="small mt-2">Indirizzo EVM:<br><code>0x5892...cbd4</code></p>
                             </div>
                         </div>
-                        <div class="col-md-6 text-center">
-                            <img src="qr-solana.jpg" alt="Wallet Solana" class="img-fluid mb-2" style="max-width: 200px;">
-                            <p class="small">Indirizzo Solana:<br>
-                            <code>7abc...xyz</code></p>
+                    </div>
+
+                    <!-- Solana Section -->
+                    <div id="solana-section" class="crypto-section" style="display: none;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button onclick="connectPhantom()" class="btn btn-primary w-100 mb-3">
+                                    Connetti Phantom
+                                </button>
+                                <div id="solana-address" class="mb-3 small"></div>
+                                <button onclick="sendPaymentSolana()" class="btn btn-success w-100" id="pay-solana" disabled>
+                                    Paga 120€
+                                </button>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <img src="qr-solana.jpg" alt="Solana QR" class="img-fluid" style="max-width: 200px;">
+                                <p class="small mt-2">Indirizzo Solana:<br><code>7abc...xyz</code></p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Conferma Automatica -->
-                <div class="alert alert-info mt-3" id="tx-status">
-                    Stato transazione: Non inviata
+                    <!-- Avviso Wallet -->
+                    <div id="wallet-alert" class="alert alert-danger mt-3" style="display: none;">
+                        Installa <a href="https://metamask.io/" target="_blank">MetaMask</a> o 
+                        <a href="https://phantom.app/" target="_blank">Phantom</a> per pagare!
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,140 +194,59 @@
     <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
     <script src="https://unpkg.com/@solana/web3.js@1.70.1/lib/index.iife.js"></script>
     <script>
-        // Configurazioni
-        const CONFIG = {
-            evm: {
-                receiver: '0x589225a945014111FA6A545f9357EF9934d3cbd4',
-                usdc: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
-                decimals: 6,
-                chainId: 1 // Ethereum Mainnet
-            },
-            solana: {
-                receiver: 'TUO_INDIRIZZO_SOLANA',
-                usdc: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v',
-                decimals: 6
-            },
-            priceAPI: 'https://api.coingecko.com/api/v3/simple/price?ids=ethereum,solana&vs_currencies=eur'
-        };
+        // Gestione Sezioni
+        function showPaymentSection() {
+            document.getElementById('paga').scrollIntoView({ behavior: 'smooth' });
+        }
 
-        // Stato Globale
-        let currentNetwork = 'evm';
-        let currentPrice = 120; // Prezzo in EUR
+        function showNetwork(network) {
+            document.querySelectorAll('.crypto-section').forEach(el => el.style.display = 'none');
+            document.getElementById(`${network}-section`).style.display = 'block';
+            document.querySelectorAll('.network-selector .btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
 
-        // Inizializzazione
-        document.querySelectorAll('[data-network]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.crypto-section').forEach(s => s.classList.remove('active'));
-                document.getElementById(`${btn.dataset.network}-section`).classList.add('active');
-                currentNetwork = btn.dataset.network;
-                updatePriceDisplay();
-            });
-        });
-
-        // Aggiornamento Prezzi
-        async function updatePrices() {
+        // EVM Logic
+        async function connectMetaMask() {
+            if (!window.ethereum) {
+                document.getElementById('wallet-alert').style.display = 'block';
+                return;
+            }
             try {
-                const response = await fetch(CONFIG.priceAPI);
-                const data = await response.json();
-                const ethPrice = data.ethereum.eur;
-                const solPrice = data.solana.eur;
-                
-                return {
-                    evm: currentPrice / ethPrice,
-                    solana: currentPrice / solPrice
-                };
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                await provider.send("eth_requestAccounts", []);
+                const address = await provider.getSigner().getAddress();
+                document.getElementById('evm-address').textContent = `Connesso: ${address.slice(0,6)}...${address.slice(-4)}`;
+                document.getElementById('pay-evm').disabled = false;
             } catch (error) {
-                console.error('Errore aggiornamento prezzi:', error);
-                return null;
+                alert(`Errore: ${error.message}`);
             }
         }
 
-        // UI Prezzi
-        async function updatePriceDisplay() {
-            const prices = await updatePrices();
-            if (!prices) return;
-
-            const cryptoAmount = prices[currentNetwork].toFixed(4);
-            document.getElementById('crypto-price').innerHTML = 
-                `${cryptoAmount} ${currentNetwork.toUpperCase()} <small class="text-muted">(~${currentPrice}€)</small>`;
-            
-            document.getElementById('last-updated').textContent = 
-                `Ultimo aggiornamento: ${new Date().toLocaleTimeString()}`;
-        }
-
-        // Refresh Manuale
-        document.getElementById('refresh-price').addEventListener('click', updatePriceDisplay);
-
-        // EVM Payments
-        async function connectMetaMask() {
-            if (!window.ethereum) return alert('Installa MetaMask!');
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            await provider.send("eth_requestAccounts", []);
-            document.getElementById('pay-evm').disabled = false;
-        }
-
-        async function sendPaymentEVM() {
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.getSigner();
-            const amount = ethers.utils.parseUnits(currentPrice.toString(), CONFIG.evm.decimals);
-            
-            const tx = await signer.sendTransaction({
-                to: CONFIG.evm.receiver,
-                value: amount
-            });
-
-            monitorTransaction(tx.hash, 'evm');
-        }
-
-        // Solana Payments
+        // Solana Logic
         async function connectPhantom() {
-            if (!window.solana) return alert('Installa Phantom Wallet!');
-            await window.solana.connect();
-            document.getElementById('pay-solana').disabled = false;
+            if (!window.solana) {
+                document.getElementById('wallet-alert').style.display = 'block';
+                return;
+            }
+            try {
+                await window.solana.connect();
+                const pubkey = window.solana.publicKey.toString();
+                document.getElementById('solana-address').textContent = `Connesso: ${pubkey.slice(0,6)}...${pubkey.slice(-4)}`;
+                document.getElementById('pay-solana').disabled = false;
+            } catch (error) {
+                alert(`Errore: ${error.message}`);
+            }
+        }
+
+        // Pagamenti (Demo)
+        async function sendPaymentEVM() {
+            alert('Pagamento simulato! Modifica con la tua logica effettiva.');
         }
 
         async function sendPaymentSolana() {
-            const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
-            const amount = currentPrice * Math.pow(10, CONFIG.solana.decimals);
-            
-            const tx = new solanaWeb3.Transaction().add(
-                solanaWeb3.SystemProgram.transfer({
-                    fromPubkey: window.solana.publicKey,
-                    toPubkey: new solanaWeb3.PublicKey(CONFIG.solana.receiver),
-                    lamports: amount
-                })
-            );
-
-            const { blockhash } = await connection.getRecentBlockhash();
-            tx.recentBlockhash = blockhash;
-            tx.feePayer = window.solana.publicKey;
-
-            const signed = await window.solana.signTransaction(tx);
-            const txId = await connection.sendRawTransaction(signed.serialize());
-            monitorTransaction(txId, 'solana');
+            alert('Pagamento simulato! Modifica con la tua logica effettiva.');
         }
-
-        // Monitoraggio TX
-        async function monitorTransaction(txHash, network) {
-            const statusElement = document.getElementById('tx-status');
-            statusElement.textContent = 'Stato: In attesa di conferma...';
-            
-            if (network === 'evm') {
-                const provider = new ethers.providers.Web3Provider(window.ethereum);
-                const receipt = await provider.waitForTransaction(txHash);
-                statusElement.textContent = receipt.status === 1 ? 
-                    '✅ Pagamento confermato!' : '❌ Transazione fallita';
-            } else {
-                const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
-                const status = await connection.getSignatureStatus(txHash);
-                statusElement.textContent = status.value?.confirmationStatus === 'finalized' ?
-                    '✅ Pagamento confermato!' : '⌛ In elaborazione...';
-            }
-        }
-
-        // Aggiorna prezzo ogni 5 minuti
-        setInterval(updatePriceDisplay, 300000);
-        updatePriceDisplay();
     </script>
 </body>
 </html>
